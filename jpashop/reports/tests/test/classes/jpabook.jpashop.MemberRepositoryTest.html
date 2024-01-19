@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - MemberRepositoryTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>MemberRepositoryTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/jpabook.jpashop.html">jpabook.jpashop</a> &gt; MemberRepositoryTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.387s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testMember()</td>
+<td class="success">0.387s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>00:46:22.170 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [jpabook.jpashop.MemberRepositoryTest]: MemberRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:46:22.223 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration jpabook.jpashop.JpashopApplication for test class jpabook.jpashop.MemberRepositoryTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.1)
+
+2024-01-20T00:46:22.417+09:00  INFO 16971 --- [    Test worker] jpabook.jpashop.MemberRepositoryTest     : Starting MemberRepositoryTest using Java 17.0.8.1 with PID 16971 (started by chaiminwoo0223 in /Users/chaiminwoo0223/Desktop/Spring/jpashop)
+2024-01-20T00:46:22.417+09:00  INFO 16971 --- [    Test worker] jpabook.jpashop.MemberRepositoryTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-01-20T00:46:22.702+09:00  INFO 16971 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-20T00:46:22.712+09:00  INFO 16971 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2024-01-20T00:46:22.966+09:00  INFO 16971 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-20T00:46:22.996+09:00  INFO 16971 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-01-20T00:46:23.012+09:00  INFO 16971 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-01-20T00:46:23.046+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -&gt; org.hibernate.type.BasicTypeReference@7c0df4ab
+2024-01-20T00:46:23.046+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -&gt; org.hibernate.type.BasicTypeReference@7c0df4ab
+2024-01-20T00:46:23.046+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Boolean -&gt; org.hibernate.type.BasicTypeReference@7c0df4ab
+2024-01-20T00:46:23.046+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration numeric_boolean -&gt; org.hibernate.type.BasicTypeReference@2e362407
+2024-01-20T00:46:23.046+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.NumericBooleanConverter -&gt; org.hibernate.type.BasicTypeReference@2e362407
+2024-01-20T00:46:23.046+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration true_false -&gt; org.hibernate.type.BasicTypeReference@388be5fd
+2024-01-20T00:46:23.046+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.TrueFalseConverter -&gt; org.hibernate.type.BasicTypeReference@388be5fd
+2024-01-20T00:46:23.049+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration yes_no -&gt; org.hibernate.type.BasicTypeReference@440ef8d
+2024-01-20T00:46:23.049+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.YesNoConverter -&gt; org.hibernate.type.BasicTypeReference@440ef8d
+2024-01-20T00:46:23.049+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -&gt; org.hibernate.type.BasicTypeReference@17fbfb02
+2024-01-20T00:46:23.049+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -&gt; org.hibernate.type.BasicTypeReference@17fbfb02
+2024-01-20T00:46:23.049+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Byte -&gt; org.hibernate.type.BasicTypeReference@17fbfb02
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary -&gt; org.hibernate.type.BasicTypeReference@8f2e3e6
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte[] -&gt; org.hibernate.type.BasicTypeReference@8f2e3e6
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration [B -&gt; org.hibernate.type.BasicTypeReference@8f2e3e6
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary_wrapper -&gt; org.hibernate.type.BasicTypeReference@24e5389c
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-binary -&gt; org.hibernate.type.BasicTypeReference@24e5389c
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration image -&gt; org.hibernate.type.BasicTypeReference@3b170235
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration blob -&gt; org.hibernate.type.BasicTypeReference@5e9bf744
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Blob -&gt; org.hibernate.type.BasicTypeReference@5e9bf744
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob -&gt; org.hibernate.type.BasicTypeReference@45e140ae
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob_wrapper -&gt; org.hibernate.type.BasicTypeReference@48cdb156
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -&gt; org.hibernate.type.BasicTypeReference@4b4814d0
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -&gt; org.hibernate.type.BasicTypeReference@4b4814d0
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Short -&gt; org.hibernate.type.BasicTypeReference@4b4814d0
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration integer -&gt; org.hibernate.type.BasicTypeReference@4ae8fb2a
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration int -&gt; org.hibernate.type.BasicTypeReference@4ae8fb2a
+2024-01-20T00:46:23.050+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Integer -&gt; org.hibernate.type.BasicTypeReference@4ae8fb2a
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -&gt; org.hibernate.type.BasicTypeReference@54326e9
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -&gt; org.hibernate.type.BasicTypeReference@54326e9
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Long -&gt; org.hibernate.type.BasicTypeReference@54326e9
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -&gt; org.hibernate.type.BasicTypeReference@20216016
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -&gt; org.hibernate.type.BasicTypeReference@20216016
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Float -&gt; org.hibernate.type.BasicTypeReference@20216016
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -&gt; org.hibernate.type.BasicTypeReference@2b441e56
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -&gt; org.hibernate.type.BasicTypeReference@2b441e56
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Double -&gt; org.hibernate.type.BasicTypeReference@2b441e56
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_integer -&gt; org.hibernate.type.BasicTypeReference@267891bf
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigInteger -&gt; org.hibernate.type.BasicTypeReference@267891bf
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_decimal -&gt; org.hibernate.type.BasicTypeReference@3a109ff7
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigDecimal -&gt; org.hibernate.type.BasicTypeReference@3a109ff7
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration character -&gt; org.hibernate.type.BasicTypeReference@111a7973
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration char -&gt; org.hibernate.type.BasicTypeReference@111a7973
+2024-01-20T00:46:23.051+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Character -&gt; org.hibernate.type.BasicTypeReference@111a7973
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration character_nchar -&gt; org.hibernate.type.BasicTypeReference@1a2773a8
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration string -&gt; org.hibernate.type.BasicTypeReference@78b0ec3a
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.String -&gt; org.hibernate.type.BasicTypeReference@78b0ec3a
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration nstring -&gt; org.hibernate.type.BasicTypeReference@46612bfc
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration characters -&gt; org.hibernate.type.BasicTypeReference@4f213a2
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration char[] -&gt; org.hibernate.type.BasicTypeReference@4f213a2
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration [C -&gt; org.hibernate.type.BasicTypeReference@4f213a2
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-characters -&gt; org.hibernate.type.BasicTypeReference@25699aa7
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration text -&gt; org.hibernate.type.BasicTypeReference@5a47730c
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ntext -&gt; org.hibernate.type.BasicTypeReference@15369d73
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration clob -&gt; org.hibernate.type.BasicTypeReference@1cde374
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Clob -&gt; org.hibernate.type.BasicTypeReference@1cde374
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration nclob -&gt; org.hibernate.type.BasicTypeReference@6818fd48
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.NClob -&gt; org.hibernate.type.BasicTypeReference@6818fd48
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob -&gt; org.hibernate.type.BasicTypeReference@9263c54
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob_char_array -&gt; org.hibernate.type.BasicTypeReference@28daf506
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob_character_array -&gt; org.hibernate.type.BasicTypeReference@4662752a
+2024-01-20T00:46:23.052+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob -&gt; org.hibernate.type.BasicTypeReference@693f2213
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob_character_array -&gt; org.hibernate.type.BasicTypeReference@514377fc
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob_char_array -&gt; org.hibernate.type.BasicTypeReference@2e4eda17
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -&gt; org.hibernate.type.BasicTypeReference@7b5021d1
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -&gt; org.hibernate.type.BasicTypeReference@7b5021d1
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDateTime -&gt; org.hibernate.type.BasicTypeReference@6befbb12
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDateTime -&gt; org.hibernate.type.BasicTypeReference@6befbb12
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDate -&gt; org.hibernate.type.BasicTypeReference@21d9cd04
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDate -&gt; org.hibernate.type.BasicTypeReference@21d9cd04
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalTime -&gt; org.hibernate.type.BasicTypeReference@799f354a
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalTime -&gt; org.hibernate.type.BasicTypeReference@799f354a
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTime -&gt; org.hibernate.type.BasicTypeReference@33bdd01
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetDateTime -&gt; org.hibernate.type.BasicTypeReference@33bdd01
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTimeWithTimezone -&gt; org.hibernate.type.BasicTypeReference@159ac15f
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTimeWithoutTimezone -&gt; org.hibernate.type.BasicTypeReference@7ac48f05
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTime -&gt; org.hibernate.type.BasicTypeReference@7af1d072
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetTime -&gt; org.hibernate.type.BasicTypeReference@7af1d072
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeUtc -&gt; org.hibernate.type.BasicTypeReference@27ffd9f8
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeWithTimezone -&gt; org.hibernate.type.BasicTypeReference@642c6461
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeWithoutTimezone -&gt; org.hibernate.type.BasicTypeReference@3ace6346
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTime -&gt; org.hibernate.type.BasicTypeReference@4e48462d
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZonedDateTime -&gt; org.hibernate.type.BasicTypeReference@4e48462d
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTimeWithTimezone -&gt; org.hibernate.type.BasicTypeReference@17216605
+2024-01-20T00:46:23.053+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTimeWithoutTimezone -&gt; org.hibernate.type.BasicTypeReference@10a907ec
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration date -&gt; org.hibernate.type.BasicTypeReference@59b492ec
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Date -&gt; org.hibernate.type.BasicTypeReference@59b492ec
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration time -&gt; org.hibernate.type.BasicTypeReference@55c1ced9
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Time -&gt; org.hibernate.type.BasicTypeReference@55c1ced9
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration timestamp -&gt; org.hibernate.type.BasicTypeReference@49cc9b2a
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Timestamp -&gt; org.hibernate.type.BasicTypeReference@49cc9b2a
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Date -&gt; org.hibernate.type.BasicTypeReference@49cc9b2a
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar -&gt; org.hibernate.type.BasicTypeReference@11826398
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Calendar -&gt; org.hibernate.type.BasicTypeReference@11826398
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.GregorianCalendar -&gt; org.hibernate.type.BasicTypeReference@11826398
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_date -&gt; org.hibernate.type.BasicTypeReference@6c5ca0b6
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_time -&gt; org.hibernate.type.BasicTypeReference@37b01ce2
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration instant -&gt; org.hibernate.type.BasicTypeReference@1a88c4f5
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Instant -&gt; org.hibernate.type.BasicTypeReference@1a88c4f5
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid -&gt; org.hibernate.type.BasicTypeReference@1894fa9f
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.UUID -&gt; org.hibernate.type.BasicTypeReference@1894fa9f
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration pg-uuid -&gt; org.hibernate.type.BasicTypeReference@1894fa9f
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-binary -&gt; org.hibernate.type.BasicTypeReference@1144a02b
+2024-01-20T00:46:23.054+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-char -&gt; org.hibernate.type.BasicTypeReference@26a4f9ed
+2024-01-20T00:46:23.055+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration class -&gt; org.hibernate.type.BasicTypeReference@7a572ea0
+2024-01-20T00:46:23.055+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Class -&gt; org.hibernate.type.BasicTypeReference@7a572ea0
+2024-01-20T00:46:23.055+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration currency -&gt; org.hibernate.type.BasicTypeReference@45287377
+2024-01-20T00:46:23.055+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration Currency -&gt; org.hibernate.type.BasicTypeReference@45287377
+2024-01-20T00:46:23.055+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Currency -&gt; org.hibernate.type.BasicTypeReference@45287377
+2024-01-20T00:46:23.055+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration locale -&gt; org.hibernate.type.BasicTypeReference@7159d601
+2024-01-20T00:46:23.055+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Locale -&gt; org.hibernate.type.BasicTypeReference@7159d601
+2024-01-20T00:46:23.055+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration serializable -&gt; org.hibernate.type.BasicTypeReference@70b33256
+2024-01-20T00:46:23.055+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.io.Serializable -&gt; org.hibernate.type.BasicTypeReference@70b33256
+2024-01-20T00:46:23.055+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration timezone -&gt; org.hibernate.type.BasicTypeReference@33d230ce
+2024-01-20T00:46:23.055+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.TimeZone -&gt; org.hibernate.type.BasicTypeReference@33d230ce
+2024-01-20T00:46:23.055+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZoneOffset -&gt; org.hibernate.type.BasicTypeReference@35e74e08
+2024-01-20T00:46:23.055+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZoneOffset -&gt; org.hibernate.type.BasicTypeReference@35e74e08
+2024-01-20T00:46:23.055+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration url -&gt; org.hibernate.type.BasicTypeReference@a316f6b
+2024-01-20T00:46:23.055+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.net.URL -&gt; org.hibernate.type.BasicTypeReference@a316f6b
+2024-01-20T00:46:23.056+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration vector -&gt; org.hibernate.type.BasicTypeReference@63f9ddf9
+2024-01-20T00:46:23.056+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration row_version -&gt; org.hibernate.type.BasicTypeReference@410fc508
+2024-01-20T00:46:23.059+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration object -&gt; org.hibernate.type.JavaObjectType@589fb74d
+2024-01-20T00:46:23.059+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Object -&gt; org.hibernate.type.JavaObjectType@589fb74d
+2024-01-20T00:46:23.059+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration null -&gt; org.hibernate.type.NullType@23b1aa9
+2024-01-20T00:46:23.059+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_date -&gt; org.hibernate.type.BasicTypeReference@54489296
+2024-01-20T00:46:23.060+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_time -&gt; org.hibernate.type.BasicTypeReference@4e8598d9
+2024-01-20T00:46:23.060+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_timestamp -&gt; org.hibernate.type.BasicTypeReference@267ff4df
+2024-01-20T00:46:23.060+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar -&gt; org.hibernate.type.BasicTypeReference@7c4b5ceb
+2024-01-20T00:46:23.060+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_date -&gt; org.hibernate.type.BasicTypeReference@6c07add6
+2024-01-20T00:46:23.060+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_time -&gt; org.hibernate.type.BasicTypeReference@e26a3df
+2024-01-20T00:46:23.060+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_binary -&gt; org.hibernate.type.BasicTypeReference@57a667c8
+2024-01-20T00:46:23.060+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_serializable -&gt; org.hibernate.type.BasicTypeReference@712cd5d3
+2024-01-20T00:46:23.147+09:00  INFO 16971 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-20T00:46:23.161+09:00  INFO 16971 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-20T00:46:23.213+09:00  INFO 16971 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:tcp://localhost/~/jpashop user=SA
+2024-01-20T00:46:23.213+09:00  INFO 16971 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-20T00:46:23.227+09:00  WARN 16971 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-20T00:46:23.246+09:00 DEBUG 16971 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(NCharTypeDescriptor) replaced previous registration(CharTypeDescriptor)
+2024-01-20T00:46:23.247+09:00 DEBUG 16971 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(NVarcharTypeDescriptor) replaced previous registration(VarcharTypeDescriptor)
+2024-01-20T00:46:23.247+09:00 DEBUG 16971 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(LongNVarcharTypeDescriptor) replaced previous registration(LongVarcharTypeDescriptor)
+2024-01-20T00:46:23.247+09:00 DEBUG 16971 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(NClobTypeDescriptor(DEFAULT)) replaced previous registration(ClobTypeDescriptor(DEFAULT))
+2024-01-20T00:46:23.247+09:00 DEBUG 16971 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(2005, ClobTypeDescriptor(STREAM_BINDING)) replaced previous registration(ClobTypeDescriptor(DEFAULT))
+2024-01-20T00:46:23.248+09:00 DEBUG 16971 --- [    Test worker] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(TimestampUtcDescriptor) replaced previous registration(TimestampUtcDescriptor)
+2024-01-20T00:46:23.250+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.DurationType -&gt; basicType@1(java.time.Duration,2)
+2024-01-20T00:46:23.250+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -&gt; basicType@1(java.time.Duration,2)
+2024-01-20T00:46:23.250+09:00 DEBUG 16971 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -&gt; basicType@1(java.time.Duration,2)
+2024-01-20T00:46:23.252+09:00 DEBUG 16971 --- [    Test worker] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@1ddf42dd] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@5c1c9881]
+2024-01-20T00:46:23.319+09:00  INFO 16971 --- [    Test worker] p6spy                                    : #1705679183319 | took 4ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/jpashop
+select * from INFORMATION_SCHEMA.SEQUENCES
+select * from INFORMATION_SCHEMA.SEQUENCES;
+2024-01-20T00:46:23.602+09:00  INFO 16971 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-20T00:46:23.602+09:00 DEBUG 16971 --- [    Test worker] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@1ddf42dd] to SessionFactoryImplementor [org.hibernate.internal.SessionFactoryImpl@5af641d3]
+2024-01-20T00:46:23.616+09:00  INFO 16971 --- [    Test worker] p6spy                                    : #1705679183616 | took 7ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/jpashop
+
+    drop table if exists member cascade 
+
+    drop table if exists member cascade ;
+2024-01-20T00:46:23.617+09:00  INFO 16971 --- [    Test worker] p6spy                                    : #1705679183617 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/jpashop
+
+    drop sequence if exists member_seq
+
+    drop sequence if exists member_seq;
+2024-01-20T00:46:23.621+09:00  INFO 16971 --- [    Test worker] p6spy                                    : #1705679183621 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/jpashop
+
+    create sequence member_seq start with 1 increment by 50
+
+    create sequence member_seq start with 1 increment by 50;
+2024-01-20T00:46:23.624+09:00  INFO 16971 --- [    Test worker] p6spy                                    : #1705679183624 | took 1ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/jpashop
+
+    create table member (
+        id bigint not null,
+        username varchar(255),
+        primary key (id)
+    )
+
+    create table member (
+        id bigint not null,
+        username varchar(255),
+        primary key (id)
+    );
+2024-01-20T00:46:23.625+09:00 TRACE 16971 --- [    Test worker] o.h.type.spi.TypeConfiguration$Scope     : Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@5af641d3] for TypeConfiguration
+2024-01-20T00:46:23.626+09:00  INFO 16971 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-20T00:46:23.715+09:00  WARN 16971 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-20T00:46:23.727+09:00  INFO 16971 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-01-20T00:46:23.894+09:00  INFO 16971 --- [    Test worker] jpabook.jpashop.MemberRepositoryTest     : Started MemberRepositoryTest in 1.606 seconds (process running for 2.152)
+2024-01-20T00:46:24.241+09:00  INFO 16971 --- [    Test worker] p6spy                                    : #1705679184241 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/jpashop
+select next value for member_seq
+select next value for member_seq;
+findMember == member: true
+2024-01-20T00:46:24.284+09:00  INFO 16971 --- [    Test worker] p6spy                                    : #1705679184284 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/jpashop
+insert into member (username,id) values (?,?)
+insert into member (username,id) values ('memberA',1);
+2024-01-20T00:46:24.285+09:00  INFO 16971 --- [    Test worker] p6spy                                    : #1705679184285 | took 0ms | commit | connection 4| url jdbc:h2:tcp://localhost/~/jpashop
+
+;
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.5</a> at 2024. 1. 20. 오전 12:46:24</p>
+</div>
+</div>
+</body>
+</html>
