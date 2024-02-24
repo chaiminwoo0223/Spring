@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -26,35 +27,22 @@ public class OrderRepository {
     // JPQL
     public List<Order> findAllByString(OrderSearch orderSearch) {
         String jpql = "select o From Order o join o.member m";
-        boolean isFirstCondition = true;
-        //주문 상태 검색
+        List<String> criteria = new ArrayList<>();
         if (orderSearch.getOrderStatus() != null) {
-            if (isFirstCondition) {
-                jpql += " where";
-                isFirstCondition = false;
-            } else {
-                jpql += " and";
-            }
-            jpql += " o.status = :status";
-        }
-        //회원 이름 검색
-        if (StringUtils.hasText(orderSearch.getMemberName())) {
-            if (isFirstCondition) {
-                jpql += " where";
-                isFirstCondition = false;
-            } else {
-                jpql += " and";
-            }
-            jpql += " m.name like :name";
-        }
-        TypedQuery<Order> query = em.createQuery(jpql, Order.class)
-                .setFirstResult(100)
-                .setMaxResults(1000);
-        if (orderSearch.getOrderStatus() != null) {
-            query = query.setParameter("status", orderSearch.getOrderStatus());
+            criteria.add("o.status = :status");
         }
         if (StringUtils.hasText(orderSearch.getMemberName())) {
-            query = query.setParameter("name", orderSearch.getMemberName());
+            criteria.add("m.name like :name");
+        }
+        if (!criteria.isEmpty()) {
+            jpql += " where " + String.join(" and ", criteria);
+        }
+        TypedQuery<Order> query = em.createQuery(jpql, Order.class);
+        if (orderSearch.getOrderStatus() != null) {
+            query.setParameter("status", orderSearch.getOrderStatus());
+        }
+        if (StringUtils.hasText(orderSearch.getMemberName())) {
+            query.setParameter("name", "%" + orderSearch.getMemberName() + "%");
         }
         return query.getResultList();
     }
