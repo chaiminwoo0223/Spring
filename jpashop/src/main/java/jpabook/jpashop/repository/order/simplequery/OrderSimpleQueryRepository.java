@@ -16,7 +16,7 @@ public class OrderSimpleQueryRepository {
                 "select new jpabook.jpashop.repository.order.simplequery.OrderSimpleQueryDTO(o.id, m.name, o.orderDate, o.status, d.address) " +
                         "from Order o " +
                         "join o.member m " +
-                        "join o.delivery d", OrderSimpleQueryDTO.class
-        ).getResultList();
+                        "join o.delivery d", OrderSimpleQueryDTO.class)
+                .getResultList();
     }
 }

@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 @RequestMapping("/api")
 @RestController
@@ -27,7 +28,7 @@ public class OrderSimpleApiController {
         List<Order> orders = orderRepository.findAllByString(new OrderSearch());
         List<SimpleOrderDTO> result = orders.stream()
                 .map(o -> new SimpleOrderDTO(o))
-                .collect(Collectors.toList());
+                .collect(toList());
         return result;
     }
 
@@ -37,7 +38,7 @@ public class OrderSimpleApiController {
         List<Order> orders = orderRepository.findAllWithMemberDelivery();
         List<SimpleOrderDTO> result = orders.stream()
                 .map(o -> new SimpleOrderDTO(o))
-                .collect(Collectors.toList());
+                .collect(toList());
         return result;
     }
 
