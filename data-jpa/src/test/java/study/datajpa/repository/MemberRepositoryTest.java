@@ -5,9 +5,8 @@ import jakarta.persistence.PersistenceContext;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 import study.datajpa.dto.MemberDTO;
@@ -234,5 +233,76 @@ class MemberRepositoryTest {
     @Test
     public void callCustom() {
         List<Member> result = memberRepository.findMemberCustom();
+    }
+
+    @Test
+    public void specBasic() {
+        Team teamA = new Team("teamA");
+        teamRepository.save(teamA);
+        Member member1 = new Member("member1", 10, teamA);
+        Member member2 = new Member("member2", 10, teamA);
+        memberRepository.save(member1);
+        memberRepository.save(member2);
+        em.flush();
+        em.clear();
+        Specification<Member> spec = MemberSpec.username("member1").and(MemberSpec.teamName("teamA"));
+        List<Member> result = memberRepository.findAll(spec);
+        assertThat(result.size()).isEqualTo(1);
+    }
+
+    @Test
+    public void queryByExample() {
+        Team teamA = new Team("teamA");
+        teamRepository.save(teamA);
+        Member member1 = new Member("member1", 10, teamA);
+        Member member2 = new Member("member2", 10, teamA);
+        memberRepository.save(member1);
+        memberRepository.save(member2);
+        em.flush();
+        em.clear();
+        Member m1 = new Member("member1");
+        Team team = new Team("teamA");
+        m1.setTeam(team);
+        ExampleMatcher matcher = ExampleMatcher.matching().withIgnorePaths("age");
+        Example<Member> example = Example.of(m1, matcher);
+        List<Member> result = memberRepository.findAll(example);
+        Optional<Member> firstMember = result.stream().findFirst();
+        assertThat(firstMember.isPresent()).isTrue();
+        assertThat(firstMember.get().getUsername()).isEqualTo("member1");
+    }
+
+    @Test
+    public void projectionsTest() {
+        Team teamA = new Team("teamA");
+        teamRepository.save(teamA);
+        Member member1 = new Member("member1", 10, teamA);
+        Member member2 = new Member("member2", 10, teamA);
+        memberRepository.save(member1);
+        memberRepository.save(member2);
+        em.flush();
+        em.clear();
+        List<NetstedClosedProjections> result = memberRepository.findProjectionsByUsername("member1", NetstedClosedProjections.class);
+        for (NetstedClosedProjections netstedClosedProjections : result) {
+            System.out.println("username = " + netstedClosedProjections.getUsername());
+            System.out.println("team name = " + netstedClosedProjections.getTeam().getName());
+        }
+    }
+
+    @Test
+    public void nativeQueryTest() {
+        Team teamA = new Team("teamA");
+        teamRepository.save(teamA);
+        Member member1 = new Member("member1", 10, teamA);
+        Member member2 = new Member("member2", 10, teamA);
+        memberRepository.save(member1);
+        memberRepository.save(member2);
+        em.flush();
+        em.clear();
+        Page<NativeProjections> byNativeProjections = memberRepository.findByNativeProjections(PageRequest.of(0, 10));
+        List<NativeProjections> content = byNativeProjections.getContent();
+        for (NativeProjections nativeProjections : content) {
+            System.out.println(nativeProjections.getUsername());
+            System.out.println(nativeProjections.getTeamName());
+        }
     }
 }
