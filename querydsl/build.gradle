@@ -48,9 +48,9 @@ clean {
 }
 
 test {
-	jvmArgs '-XX:+EnableDynamicAgentLoading'
+	jvmArgs '-XX:+EnableDynamicAgentLoading' // 동적 에이전트 로딩 허용
 }
 
 bootRun {
-	jvmArgs = ['-XX:+EnableDynamicAgentLoading']
+	jvmArgs = ['-XX:+EnableDynamicAgentLoading'] // 동적 에이전트 로딩 허용
 }
