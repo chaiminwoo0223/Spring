@@ -587,7 +587,6 @@ public class QuerydslBasicTest {
     @Test
     @Commit
     public void bulkUpdate() {
-
         // member1 = 10 -> DB member1
         // member2 = 20 -> DB member2
         // member3 = 30 -> DB member3
@@ -640,23 +639,6 @@ public class QuerydslBasicTest {
                 .execute();
     }
 
-    private List<Member> searchMember1(String usernameCond, Integer ageCond) {
-        BooleanBuilder builder = new BooleanBuilder();
-
-        if (usernameCond != null) {
-            builder.and(member.username.eq(usernameCond));
-        }
-
-        if (ageCond != null) {
-            builder.and(member.age.eq(ageCond));
-        }
-
-        return queryFactory
-                .selectFrom(member)
-                .where(builder)
-                .fetch();
-    }
-
     @Test
     public void sqlFunction() {
         List<String> result = queryFactory
@@ -682,6 +664,23 @@ public class QuerydslBasicTest {
         for (String s : result) {
             System.out.println("s = " + s);
         }
+    }
+
+    private List<Member> searchMember1(String usernameCond, Integer ageCond) {
+        BooleanBuilder builder = new BooleanBuilder();
+
+        if (usernameCond != null) {
+            builder.and(member.username.eq(usernameCond));
+        }
+
+        if (ageCond != null) {
+            builder.and(member.age.eq(ageCond));
+        }
+
+        return queryFactory
+                .selectFrom(member)
+                .where(builder)
+                .fetch();
     }
 
     private List<Member> searchMember2(String usernameCond, Integer ageCond) {
