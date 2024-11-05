@@ -57,10 +57,10 @@ class MemberServiceTest {
 
 
     @Test
-    void findAll() {
+    void findMembers() {
     }
 
     @Test
-    void findById() {
+    void findOne() {
     }
 }
