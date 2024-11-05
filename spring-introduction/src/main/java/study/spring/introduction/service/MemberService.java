@@ -1,12 +1,14 @@
 package study.spring.introduction.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 import study.spring.introduction.domain.Member;
 import study.spring.introduction.repository.MemberRepository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service // Spring Container에 Spring Bean 등록(@Component)
 @RequiredArgsConstructor
 public class MemberService {
     private final MemberRepository memberRepository;

@@ -1,9 +1,11 @@
 package study.spring.introduction.repository;
 
+import org.springframework.stereotype.Repository;
 import study.spring.introduction.domain.Member;
 
 import java.util.*;
 
+@Repository // Spring Container에 Spring Bean 등록(@Component)
 public class MemoryMemberRepository implements MemberRepository {
     private static final Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;
