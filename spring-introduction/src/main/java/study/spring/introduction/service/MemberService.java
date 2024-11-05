@@ -1,14 +1,15 @@
 package study.spring.introduction.service;
 
+import lombok.RequiredArgsConstructor;
 import study.spring.introduction.domain.Member;
 import study.spring.introduction.repository.MemberRepository;
-import study.spring.introduction.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 public class MemberService {
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
     
     // 회원가입
     public Long join(Member member) {
@@ -21,14 +22,14 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
-    public Optional<Member> findById(Long memberId) {
+    public Optional<Member> findOne(Long memberId) {
         return memberRepository.findById(memberId);
     }
 
     private void validateDuplicateMember(Member member) {
         memberRepository.findByName(member.getName())
                 .ifPresent(m -> {
-                    throw new IllegalArgumentException("이미 존재하는 회원입니다.");
+                    throw new IllegalStateException("이미 존재하는 회원입니다.");
                 });
     }
 }
