@@ -6,7 +6,7 @@ import study.spring.introduction.aop.TimeTraceAop;
 
 @Configuration
 public class SpringConfig {
-    @Bean
+    @Bean // Spring Container에 Spring Bean 등록(자바 코드)
     public TimeTraceAop timeTraceAop() {
         return new TimeTraceAop();
     }
