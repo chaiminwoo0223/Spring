@@ -2,6 +2,7 @@ package study.spring.introduction.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import study.spring.introduction.domain.Member;
 import study.spring.introduction.repository.MemberRepository;
 
@@ -10,9 +11,10 @@ import java.util.Optional;
 
 @Service // Spring Container에 Spring Bean 등록(@Component)
 @RequiredArgsConstructor
+@Transactional // JPA를 통한 모든 데이터 변경은 트랜잭션 안에서 실행되어야 함
 public class MemberService {
     private final MemberRepository memberRepository;
-    
+
     // 회원가입
     public Long join(Member member) {
         validateDuplicateMember(member); // 중복 회원 검증
