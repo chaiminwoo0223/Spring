@@ -9,10 +9,18 @@ import study.spring.basic.order.OrderServiceImpl;
 
 public class AppConfig {
     public MemberService memberService() {
-        return new MemberServiceImpl(new MemoryMemberRepository()); // 의존관계 주입(생성자 주입)
+        return new MemberServiceImpl(memberRepository());
     }
 
     public OrderService orderService() {
-        return new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy()); // 의존관계 주입(생성자 주입)
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
+    }
+
+    private static MemoryMemberRepository memberRepository() {
+        return new MemoryMemberRepository();
+    }
+
+    private static FixDiscountPolicy discountPolicy() {
+        return new FixDiscountPolicy();
     }
 }
