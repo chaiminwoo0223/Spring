@@ -1,5 +1,7 @@
 package study.spring.basic;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import study.spring.basic.discount.DiscountPolicy;
 import study.spring.basic.discount.RateDiscountPolicy;
 import study.spring.basic.member.MemberRepository;
@@ -9,20 +11,25 @@ import study.spring.basic.member.MemoryMemberRepository;
 import study.spring.basic.order.OrderService;
 import study.spring.basic.order.OrderServiceImpl;
 
+@Configuration
 public class AppConfig {
+    @Bean
     public MemberService memberService() {
         return new MemberServiceImpl(memberRepository());
     }
 
+    @Bean
     public OrderService orderService() {
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
-    private static MemberRepository memberRepository() {
+    @Bean
+    public static MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
-    private static DiscountPolicy discountPolicy() {
+    @Bean
+    public static DiscountPolicy discountPolicy() {
         return new RateDiscountPolicy();
     }
 }
