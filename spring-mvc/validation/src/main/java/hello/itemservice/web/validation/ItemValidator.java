@@ -27,7 +27,7 @@ public class ItemValidator implements Validator {
             errors.rejectValue("price", "range", new Object[]{1000, 1000000}, null);
         }
 
-        if (item.getQuantity() == null || item.getQuantity() >= 9999) {
+        if (item.getQuantity() == null || item.getQuantity() > 9999) {
             errors.rejectValue("quantity", "max", new Object[]{9999}, null);
         }
 
