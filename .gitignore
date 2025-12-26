@@ -1,6 +1,10 @@
-.gradle
-.idea
-build
-h2
+# Gradle
+.gradle/
+build/
 
-**/.DS_Store
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Mac OS
+.DS_Store
