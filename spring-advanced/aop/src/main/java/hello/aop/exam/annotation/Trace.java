@@ -1,4 +1,4 @@
-package hello.aop.member.annotation;
+package hello.aop.exam.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,6 +7,5 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface MethodAop {
-    String value();
+public @interface Trace {
 }
