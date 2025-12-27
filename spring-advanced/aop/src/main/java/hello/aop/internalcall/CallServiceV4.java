@@ -17,6 +17,4 @@ public class CallServiceV4 {
         log.info("call external");
         internalService.internal(); // 외부 메서드 호출
     }
-
-
 }
