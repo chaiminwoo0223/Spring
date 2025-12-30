@@ -1,0 +1,27 @@
+management:
+  info:
+    java:
+      enabled: true
+    os:
+      enabled: true
+    env:
+      enabled: true
+  server:
+    port: 9292
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-components: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+info:
+  app:
+    name: hello-actuator
+    company: cmw
+
+logging:
+  level:
+    hello.controller: DEBUG
