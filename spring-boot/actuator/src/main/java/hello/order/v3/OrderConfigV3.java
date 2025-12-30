@@ -1,7 +1,6 @@
 package hello.order.v3;
 
 import hello.order.OrderService;
-import hello.order.v1.OrderServiceV1;
 import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
