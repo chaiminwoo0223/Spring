@@ -1,5 +1,6 @@
 package hello.order.v2;
 
+import hello.order.OrderService;
 import io.micrometer.core.aop.CountedAspect;
 import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.context.annotation.Bean;
@@ -9,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class OrderConfigV2 {
 
     @Bean
-    public OrderServiceV2 orderService() {
+    public OrderService orderService() {
         return new OrderServiceV2();
     }
 

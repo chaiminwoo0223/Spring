@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Slf4j
 @RequiredArgsConstructor
 public class OrderServiceV1 implements OrderService {
-    private final MeterRegistry registry ;
+    private final MeterRegistry registry;
 
     private AtomicInteger stock = new AtomicInteger(100);
 

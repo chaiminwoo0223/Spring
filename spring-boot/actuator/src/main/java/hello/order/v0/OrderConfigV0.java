@@ -1,5 +1,6 @@
 package hello.order.v0;
 
+import hello.order.OrderService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -7,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class OrderConfigV0 {
 
     @Bean
-    public OrderServiceV0 orderService() {
+    public OrderService orderService() {
         return new OrderServiceV0();
     }
 }

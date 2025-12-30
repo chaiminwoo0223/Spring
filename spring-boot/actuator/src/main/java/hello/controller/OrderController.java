@@ -1,6 +1,6 @@
 package hello.controller;
 
-import hello.order.v0.OrderServiceV0;
+import hello.order.OrderService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class OrderController {
-    private final OrderServiceV0 orderService;
+    private final OrderService orderService;
 
     @GetMapping("/order")
     public String order() {
