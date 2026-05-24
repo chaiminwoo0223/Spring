@@ -13,7 +13,6 @@ import org.springframework.batch.infrastructure.item.ItemWriter;
 import org.springframework.batch.infrastructure.item.support.ListItemReader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.transaction.PlatformTransactionManager;
 
 import java.util.Arrays;
 
@@ -22,7 +21,6 @@ import java.util.Arrays;
 @RequiredArgsConstructor
 public class SimpleChunkConfig {
     private final JobRepository jobRepository;
-    private final PlatformTransactionManager transactionManager;
 
     @Bean
     public Job simpleJob() {
