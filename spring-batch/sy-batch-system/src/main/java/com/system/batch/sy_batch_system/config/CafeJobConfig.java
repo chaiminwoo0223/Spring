@@ -7,6 +7,7 @@ import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.Step;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.infrastructure.repeat.RepeatStatus;
+import org.springframework.batch.infrastructure.support.transaction.ResourcelessTransactionManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -38,9 +39,9 @@ public class CafeJobConfig {
         return new StepBuilder("openCafeStep", jobRepository)
                 .tasklet((contribution, chunkContext) -> {
                     System.out.println("[오픈] 카페 문을 열고, 머신을 예열합니다.");
-                    coffeeCount = 0; // 해당 배치 재실행시 카운트 초기화
+                    coffeeCount = 0; // 재실행시 카운트 초기화
                     return RepeatStatus.FINISHED; // 준비 끝, 다음 단계로~
-                }, transactionManager)
+                }, new ResourcelessTransactionManager())
                 .build();
 
     }
