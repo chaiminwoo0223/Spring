@@ -21,10 +21,6 @@ public class CafeJobConfig {
     private int coffeeCount = 0; // 만든 커피 수
     private final int ORDER_TARGET = 5; // 주문 받은 커피 수 (5잔)
 
-    // 1. 카페 문열기 => openCafeStep
-    // 2. 커피 만들기 => makeCoffeeStep
-    // 3. 마감 청소 및 퇴근 => closeCafeStep
-
     @Bean
     public Job cafeJob() {
         return new JobBuilder("cafeJob", jobRepository)
@@ -34,6 +30,7 @@ public class CafeJobConfig {
                 .build();
     }
 
+    // 1. 카페 문열기 => openCafeStep
     @Bean
     public Step openCafeStep() {
         return new StepBuilder("openCafeStep", jobRepository)
@@ -46,6 +43,7 @@ public class CafeJobConfig {
 
     }
 
+    // 2. 커피 만들기 => makeCoffeeStep
     @Bean
     public Step makeCoffeeStep() {
         return new StepBuilder("makeCoffeeStep", jobRepository)
@@ -63,6 +61,7 @@ public class CafeJobConfig {
                 .build();
     }
 
+    // 3. 마감 청소 및 퇴근 => closeCafeStep
     @Bean
     public Step closeCafeStep() {
         return new StepBuilder("closeCafeStep", jobRepository)
