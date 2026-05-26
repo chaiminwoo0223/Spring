@@ -22,7 +22,7 @@ public class JobScheduler {
     private final JobOperator jobOperator;
     private final Job settlementJob;
 
-    @Scheduled(cron = "0 30 22 * * *")
+    @Scheduled(cron = "0 41 22 * * *")
     public void runJob(){
         try {
             JobParameters jobParameters = new JobParametersBuilder()
