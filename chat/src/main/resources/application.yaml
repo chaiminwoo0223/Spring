@@ -7,3 +7,8 @@ spring:
       chat:
         model: openai/gpt-4.1-nano # 실제 사용할 대화형 AI의 모델명
         base-url: https://models.github.ai/inference # GitHub Models 서버로 요청을 보냄
+    ollama:
+      init:
+        pull-model-strategy: when_missing
+      chat:
+        model: hf.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF
