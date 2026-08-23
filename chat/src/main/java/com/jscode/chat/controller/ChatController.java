@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
 @RestController
-public class MyController {
+public class ChatController {
     private final ChatClient chatClient;
 
-    public MyController(ChatClient.Builder chatClientBuilder) {
+    public ChatController(ChatClient.Builder chatClientBuilder) {
         this.chatClient = chatClientBuilder.build();
     }
 
