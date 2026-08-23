@@ -3,6 +3,7 @@ package com.jscode.chat.service;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.api.Advisor;
 import org.springframework.ai.chat.memory.ChatMemory;
+import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -19,6 +20,12 @@ public class ChatService {
         return prepareRequest(prompt, conversationId)
                 .stream()
                 .content();
+    }
+
+    public ChatResponse call(Prompt prompt, String conversationId) {
+        return prepareRequest(prompt, conversationId)
+                .call()
+                .chatResponse();
     }
 
     private ChatClient.ChatClientRequestSpec prepareRequest(Prompt prompt, String conversationId) {
