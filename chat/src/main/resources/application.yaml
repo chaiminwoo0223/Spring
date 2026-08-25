@@ -13,6 +13,8 @@ spring:
         pull-model-strategy: when_missing
       chat:
         model: hf.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF
+      embedding:
+        model: bge-m3
 
 logging:
   level:
@@ -21,4 +23,6 @@ logging:
 app:
   rag:
     documents-location-pattern: classpath:spring-ai-llm.pdf
-
+  etl:
+    pipeline:
+      init: true
