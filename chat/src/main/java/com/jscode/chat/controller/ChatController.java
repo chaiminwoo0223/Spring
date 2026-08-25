@@ -1,6 +1,6 @@
 package com.jscode.chat.controller;
 
-import com.jscode.chat.service.ChatService;
+import com.jscode.chat.service.RagChatService;
 import jakarta.annotation.Nullable;
 import jakarta.validation.Valid;
 import org.springframework.ai.chat.client.ChatClient;
@@ -23,11 +23,11 @@ import java.util.List;
 @RestController
 public class ChatController {
     private final ChatClient chatClient;
-    private final ChatService chatService;
+    private final RagChatService ragChatService;
 
-    public ChatController(ChatClient.Builder chatClientBuilder, ChatService chatService) {
+    public ChatController(ChatClient.Builder chatClientBuilder, RagChatService ragChatService) {
         this.chatClient = chatClientBuilder.build();
-        this.chatService = chatService;
+        this.ragChatService = ragChatService;
     }
 
     @GetMapping("/ai")
@@ -41,18 +41,18 @@ public class ChatController {
     @PostMapping(value = "/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<String> stream(@RequestBody @Valid PromptBody promptBody) {
         Prompt prompt = createPrompt(promptBody);
-        return chatService.stream(prompt, promptBody.conversationId());
+        return ragChatService.stream(prompt, promptBody.conversationId());
     }
 
     @PostMapping(value = "/call", produces = MediaType.APPLICATION_JSON_VALUE)
     public ChatResponse call(@RequestBody @Valid PromptBody promptBody) {
         Prompt prompt = createPrompt(promptBody);
-        return chatService.call(prompt, promptBody.conversationId());
+        return ragChatService.call(prompt, promptBody.conversationId());
     }
 
     @PostMapping(value = "/cs", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ChatService.CsEvaluation cs(@RequestBody @Valid PromptBody promptBody) {
-        return chatService.csEvaluation(createPrompt(promptBody), promptBody.conversationId());
+    public RagChatService.CsEvaluation cs(@RequestBody @Valid PromptBody promptBody) {
+        return ragChatService.csEvaluation(createPrompt(promptBody), promptBody.conversationId());
     }
 
     // 요청 전용 DTO. 여기엔 Spring AI 내부 타입을 절대 넣지 않는다.

@@ -52,17 +52,17 @@ public class RagConfig {
     }
 
     @Bean
-    public DocumentTransformer textSplitter(){
+    public DocumentTransformer textSplitter() {
         return new LengthTextSplitter(200,100);
     }
 
     @Bean
-    public DocumentTransformer keywordMetadataEnricher(ChatModel chatModel){
+    public DocumentTransformer keywordMetadataEnricher(ChatModel chatModel) {
         return new KeywordMetadataEnricher(chatModel, 4);
     }
 
     @Bean
-    public DocumentWriter jsonConsoleDocumentWriter(ObjectMapper objectMapper){
+    public DocumentWriter jsonConsoleDocumentWriter(ObjectMapper objectMapper) {
         // 앞 단계에서 가공되어 넘어온 문서 조각 리스트(documents)를 받아서 로직실행
         return documents -> {
 
@@ -92,7 +92,6 @@ public class RagConfig {
             DocumentTransformer textSplitter,       // 2. Transform
             DocumentTransformer keywordMetadataEnricher,
             List<DocumentWriter> documentWriters) { // 3. Load(콘솔 출력기, VectorDB 등)
-
         return args -> {
             System.out.println("[System] ETL 파이프라인 가동 시작");
 
@@ -123,12 +122,12 @@ public class RagConfig {
 
     @ConditionalOnProperty(prefix = "app.vectorstore.in-memory", name = "enabled", havingValue = "true")
     @Bean
-    public VectorStore vectorStore(EmbeddingModel embeddingModel){
+    public VectorStore vectorStore(EmbeddingModel embeddingModel) {
         return SimpleVectorStore.builder(embeddingModel).build();
     }
 
     @Bean
-    public RetrievalAugmentationAdvisor retrievalAugmentationAdvisor(VectorStore vectorStore, ChatClient.Builder chatClientBuilder){
+    public RetrievalAugmentationAdvisor retrievalAugmentationAdvisor(VectorStore vectorStore, ChatClient.Builder chatClientBuilder) {
         // 1. 문서검색기 도구
         // Vector DB에서 유사도 30%(0.3) 이상인 문서를 최대 3개(topK) 찾아오도록 세팅
         VectorStoreDocumentRetriever documentRetriever = VectorStoreDocumentRetriever.builder()
