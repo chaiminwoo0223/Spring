@@ -25,20 +25,18 @@ public class ToolService {
                 .defaultOptions(ToolCallingChatOptions.builder().temperature(0.2).build().mutate())
                 .defaultAdvisors(advisors)
                 .build();
-
-
     }
 
-    private ChatClient.ChatClientRequestSpec createRequest(String conversationId, Prompt prompt){
+    private ChatClient.ChatClientRequestSpec createRequest(String conversationId, Prompt prompt) {
         return chatClient.prompt(prompt)
                 .advisors(advisorSpec -> advisorSpec.param(ChatMemory.CONVERSATION_ID, conversationId));
     }
 
-    public Flux<String> stream(String conversationId, Prompt prompt){
+    public Flux<String> stream(String conversationId, Prompt prompt) {
         return createRequest(conversationId, prompt).stream().content();
     }
 
-    public ChatResponse call(String conversationId, Prompt prompt){
+    public ChatResponse call(String conversationId, Prompt prompt) {
         return createRequest(conversationId, prompt).call().chatResponse();
     }
 }

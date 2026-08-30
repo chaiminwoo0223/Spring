@@ -10,7 +10,6 @@ import java.util.List;
 
 @Service
 public class Tools {
-
     private final RestClient restClient;
 
     public Tools(RestClient.Builder restClientBuilder) {
