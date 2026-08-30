@@ -1,5 +1,7 @@
 package com.jscode.chat.config;
 
+import co.elastic.clients.transport.rest5_client.low_level.Rest5Client;
+import org.apache.hc.core5.http.HttpHost;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
@@ -42,7 +44,7 @@ public class ChatConfig {
     @ConditionalOnProperty(prefix = "app.cli", name = "enabled", havingValue = "true")
     @Bean
     public DocumentPostProcessor printDocumentsPostProcessor() {
-        return (query, documents) -> {
+        return (_, documents) -> {
             System.out.println("\n[ Search Results ]");
             System.out.println("===============================================");
 
@@ -106,5 +108,10 @@ public class ChatConfig {
         }
 
         return builder.build();
+    }
+
+    @Bean
+    public Rest5Client rest5Client() {
+        return Rest5Client.builder(new HttpHost("http", "localhost", 9200)).build();
     }
 }
