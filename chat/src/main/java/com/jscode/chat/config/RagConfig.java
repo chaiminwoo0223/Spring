@@ -1,6 +1,5 @@
 package com.jscode.chat.config;
 
-import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.document.DocumentReader;
@@ -8,11 +7,6 @@ import org.springframework.ai.document.DocumentTransformer;
 import org.springframework.ai.document.DocumentWriter;
 import org.springframework.ai.embedding.EmbeddingModel;
 import org.springframework.ai.model.transformer.KeywordMetadataEnricher;
-import org.springframework.ai.rag.advisor.RetrievalAugmentationAdvisor;
-import org.springframework.ai.rag.generation.augmentation.ContextualQueryAugmenter;
-import org.springframework.ai.rag.preretrieval.query.expansion.MultiQueryExpander;
-import org.springframework.ai.rag.preretrieval.query.transformation.TranslationQueryTransformer;
-import org.springframework.ai.rag.retrieval.search.VectorStoreDocumentRetriever;
 import org.springframework.ai.reader.tika.TikaDocumentReader;
 import org.springframework.ai.vectorstore.SimpleVectorStore;
 import org.springframework.ai.vectorstore.VectorStore;
@@ -92,7 +86,7 @@ public class RagConfig {
             DocumentTransformer textSplitter,       // 2. Transform
             DocumentTransformer keywordMetadataEnricher,
             List<DocumentWriter> documentWriters) { // 3. Load(콘솔 출력기, VectorDB 등)
-        return args -> {
+        return _ -> {
             System.out.println("[System] ETL 파이프라인 가동 시작");
 
             // 1. 등록된 모든 파일 리더기(Reader)들을 하나씩 꺼내서 실행
@@ -124,43 +118,5 @@ public class RagConfig {
     @Bean
     public VectorStore vectorStore(EmbeddingModel embeddingModel) {
         return SimpleVectorStore.builder(embeddingModel).build();
-    }
-
-    @Bean
-    public RetrievalAugmentationAdvisor retrievalAugmentationAdvisor(VectorStore vectorStore, ChatClient.Builder chatClientBuilder) {
-        // 1. 문서검색기 도구
-        // Vector DB에서 유사도 30%(0.3) 이상인 문서를 최대 3개(topK) 찾아오도록 세팅
-        VectorStoreDocumentRetriever documentRetriever = VectorStoreDocumentRetriever.builder()
-                .vectorStore(vectorStore)
-                .similarityThreshold(0.3)
-                .topK(3)
-                .build();
-
-        // 2. 프롬프트 결합기 도구
-        // 검색된 문서가 하나도 없더라도 에러를 내지말고 LLM에게 유연하게 넘기도록 세팅
-        ContextualQueryAugmenter queryAugmenter = ContextualQueryAugmenter.builder()
-                .allowEmptyContext(true)
-                .build();
-
-        // 3. 쿼리 익스펜더
-        MultiQueryExpander queryExpander = MultiQueryExpander.builder()
-                .chatClientBuilder(chatClientBuilder)
-                .build();
-
-        // 4. 쿼리 트랜스포머
-        TranslationQueryTransformer queryTransformer = TranslationQueryTransformer.builder()
-                .chatClientBuilder(chatClientBuilder)
-                .targetLanguage("korean")
-                .build();
-
-
-        //5. 최종 합체
-        return RetrievalAugmentationAdvisor.builder()
-                .documentRetriever(documentRetriever)
-                .queryAugmenter(queryAugmenter)
-                // ~~~ 다양한 도구들
-                .queryExpander(queryExpander)
-                .queryTransformers(queryTransformer)
-                .build();
     }
 }

@@ -10,7 +10,6 @@ import org.springframework.ai.rag.retrieval.search.VectorStoreDocumentRetriever;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -33,30 +32,9 @@ public class RagChatService {
                 .chatResponse();
     }
 
-    public CsEvaluation csEvaluation(Prompt prompt, String conversationId, Optional<String> filterExpressionAsOpt) {
-        return prepareRequest(prompt, conversationId, filterExpressionAsOpt)
-                .call()
-                .entity(CsEvaluation.class);
-    }
-
-    // 1. 긴급도, 문의 카테고리 Enum 정의
-    public enum Urgency { LOW, NORMAL, HIGH, URGENT }
-    public enum Category { REFUND, SHIPPING, DEFECT, INQUIRY }
-
-    // 2. 응답 레코드 정의
-    public record CsEvaluation(
-            Category category,
-            Urgency urgency,
-            List<String> keywords // 예: ["배송지연", "환불요청", "파손"]
-    ) {}
-
     private ChatClient.ChatClientRequestSpec prepareRequest(Prompt prompt, String conversationId, Optional<String> filterExpressionAsOpt) {
         return chatClient.prompt(prompt)
-                .advisors(advisorSpec ->
-                        advisorSpec.param(ChatMemory.CONVERSATION_ID, conversationId))
-                .advisors(advisorSpec ->
-                        advisorSpec.param(VectorStoreDocumentRetriever.FILTER_EXPRESSION, filterExpressionAsOpt.orElse("")
-                        ));
+                .advisors(advisorSpec -> advisorSpec.param(ChatMemory.CONVERSATION_ID, conversationId))
+                .advisors(advisorSpec -> advisorSpec.param(VectorStoreDocumentRetriever.FILTER_EXPRESSION, filterExpressionAsOpt.orElse("")));
     }
-
 }

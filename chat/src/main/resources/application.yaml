@@ -29,3 +29,5 @@ app:
   vectorstore:
     in-memory:
       enabled: true
+  cli:
+    enabled: true

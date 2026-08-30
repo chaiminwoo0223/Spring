@@ -10,16 +10,19 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.Optional;
 import java.util.Scanner;
 
 @Configuration
 public class CliConfig {
 
-    @ConditionalOnProperty(prefix = "spring.application", name = "cli", havingValue = "true")
+    @ConditionalOnProperty(prefix = "app.cli", name = "enabled", havingValue = "true")
     @Bean
     // 스프링 부트 서버가 완전히 켜지기 전에 단 한번 자동으로 실행
-    public CommandLineRunner cli(@Value("${spring.application.name}") String applicationName, RagChatService ragChatService) {
-        return args -> {
+    public CommandLineRunner cli(@Value("${spring.application.name}") String applicationName,
+                                 RagChatService ragChatService,
+                                 @Value("${app.cli.filter-expression:}") String filterExpression) {
+        return _ -> {
             // 1. 스프링 기본 로그 끄기 (채팅에 방해되지 않도록)
             LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
             context.getLogger("ROOT").detachAppender("CONSOLE");
@@ -44,7 +47,12 @@ public class CliConfig {
 
                     // 3.스트리밍 처리 (핵심 변경 포인트)
                     // Flux(스트림)를 toIterable()로 바꾸면 일반적인 for-each 문으로 한 글자씩 꺼내 쓸 수 있음!
-                    Iterable<String> chatStream = ragChatService.stream(new Prompt(userMessage), "cli").toIterable();
+                    Iterable<String> chatStream = ragChatService.stream(
+                            new Prompt(userMessage),
+                            "cli",
+                            // filterExpression의 값이 있을때만 통과
+                            Optional.ofNullable(filterExpression).filter(s -> !s.isBlank())
+                    ).toIterable();
 
                     for (String token : chatStream) {
                         System.out.print(token); // 한 글자씩 화면에 출력 (타이핑 효과)
