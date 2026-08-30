@@ -1,0 +1,28 @@
+# 애플리케이션 커스텀 옵션 추가
+app:
+  cli:
+    enabled: true  # CLI 모드 활성화 여부
+  chat:
+    default-system-prompt: 한국어를 사용하는 tool 지원 AI 입니다.  # 기본 system prompt
+
+logging:
+  level:
+    org:
+      springframework:
+        ai:
+          chat:
+            client:
+              advisor: DEBUG  # SimpleLoggerAdvisor 등의 Advisor에서 DEBUG 로그 출력
+          tool: DEBUG  # Tool 사용 관련 DEBUG 로그 출력
+
+spring:
+  application:
+    name: tool  # 애플리케이션 이름
+  ai:
+    ollama:
+      init:
+        pull-model-strategy: when_missing
+      chat:
+        model: hf.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF
+      embedding:
+        model: bge-m3
