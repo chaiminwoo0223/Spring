@@ -1,0 +1,34 @@
+app:
+  chat:
+    default-system-prompt: 한국어를 사용하는 tool 지원 AI 입니다. # 기본 system prompt
+  etl:
+    pipeline:
+      init: true # 초기 데이터 로딩 여부
+  vectorstore:
+    in-memory.enabled: true # in-memory SimpleVectorStore 사용 여부
+  rag:
+    documents-location-pattern: classpath:spring-ai-llm2.pdf # RAG Data 위치
+
+server:
+  port: 8081
+spring:
+  application:
+    name: mcp-server
+  ai:
+    mcp:
+      server:
+        name: ${spring.application.name}
+        version: 0.1.0
+        instructions: "지역을 받아 시간 정보를 제공하고 Spring AI 개념 정보를 RAG 를 사용해 제공하는 MCP 서버"
+    model:
+      chat: ollama
+      embedding: ollama
+      ollama:
+        init:
+          pull-model-strategy: when_missig
+        chat:
+          options:
+            model: hf.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF
+        embedding:
+          options:
+            model: bge-m3
