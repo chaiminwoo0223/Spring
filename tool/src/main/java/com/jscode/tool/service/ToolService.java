@@ -27,16 +27,16 @@ public class ToolService {
                 .build();
     }
 
-    private ChatClient.ChatClientRequestSpec createRequest(String conversationId, Prompt prompt) {
-        return chatClient.prompt(prompt)
-                .advisors(advisorSpec -> advisorSpec.param(ChatMemory.CONVERSATION_ID, conversationId));
-    }
-
     public Flux<String> stream(String conversationId, Prompt prompt) {
         return createRequest(conversationId, prompt).stream().content();
     }
 
     public ChatResponse call(String conversationId, Prompt prompt) {
         return createRequest(conversationId, prompt).call().chatResponse();
+    }
+
+    private ChatClient.ChatClientRequestSpec createRequest(String conversationId, Prompt prompt) {
+        return chatClient.prompt(prompt)
+                .advisors(advisorSpec -> advisorSpec.param(ChatMemory.CONVERSATION_ID, conversationId));
     }
 }
